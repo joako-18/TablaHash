@@ -1,5 +1,4 @@
 import models.HashTable;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,11 +9,11 @@ public class Main {
         HashTable hashTable1 = new HashTable(1000);
         HashTable hashTable2 = new HashTable(1000);
 
-        try (BufferedReader br = new BufferedReader(new FileReader("bussines.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\EsauP\\OneDrive\\Escritorio\\dataset-main\\dataset-main\\bussines.csv"))) {
             while (br.ready()) {
                 String[] business = br.readLine().split(",");
                 String key = business[0];
-                String value = "Name=" + business[1] + ", Address=" + business[2] + ", City=" + business[3] + ", State= " + business[4];
+                String value = "Name=" + business[1] + ", Address=" + business[2] + ", City=" + business[3] + ", State=" + business[4];
                 hashTable1.insert(key, value, 1);
                 hashTable2.insert(key, value, 2);
             }
@@ -22,6 +21,7 @@ public class Main {
             e.printStackTrace();
         }
 
+        // Menú para interactuar con el usuario
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
@@ -46,7 +46,7 @@ public class Main {
                     String city = scanner.nextLine();
                     System.out.print("Ingresa el Estado: ");
                     String state = scanner.nextLine();
-                    String value = "Name=" + name + ", Address=" + address + ", City=" + city + ", State= " + state;
+                    String value = "Name=" + name + ", Address=" + address + ", City=" + city + ", State=" + state;
                     hashTable1.insert(key, value, 1);
                     hashTable2.insert(key, value, 2);
                     System.out.println("Datos insertados correctamente en ambas tablas hash.");

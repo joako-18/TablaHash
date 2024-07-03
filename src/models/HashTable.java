@@ -16,6 +16,7 @@ public class HashTable {
 
     public void insert(String key, String value, int hashFunction) {
         int index = Math.abs(hash(key, hashFunction) % size);
+        System.out.println(index);
         for (Node node : table[index]) {
             if (node.key.equals(key)) {
                 node.values.add(value);
@@ -28,6 +29,7 @@ public class HashTable {
     public String get(String key, int hashFunction) {
         int hashValue = hash(key, hashFunction);
         int index = Math.abs(hashValue % size);
+        System.out.println(index);
         System.out.println("Clave hash utilizada: " + hashValue);
         for (Node node : table[index]) {
             if (node.key.equals(key)) {

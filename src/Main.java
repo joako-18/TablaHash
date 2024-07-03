@@ -21,7 +21,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        // Menú para interactuar con el usuario
         Scanner scanner = new Scanner(System.in);
         int choice;
         do {
